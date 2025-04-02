@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //Map Initialization Data
         //Set Maximum bounds on map
     var netherlandsBounds = [[50.5, 3.2], [53.6, 7.2]];
+
         // Define Map Rules
     var map = L.map('map', {
         center: [52.1, 5.3],
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minZoom: 8,
         maxZoom: 18
       }); 
+
         // Define the map layer to be used
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
@@ -105,13 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
       drawnItems.removeLayer(rectangle);
       rectangle = null;
 
-      var inputProjectName = document.getElementById('projectname-input');
+      var inputProjectName = document.getElementById('projectname-input').value;
       projectname = inputProjectName.value;
     }
     
-   
-    
-
+    // Function to send coordinates to the server
     function sendCoordsToServer(nwCoord, seCoord) {
       fetch('http://127.0.0.1:5500/execute', {
         method: 'POST',
