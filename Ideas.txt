@@ -1,0 +1,3 @@
+- Login system
+    If logged in, keep projects saved
+    If not, projects get deleted immediately
