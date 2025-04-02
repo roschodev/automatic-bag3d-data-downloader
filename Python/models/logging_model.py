@@ -6,23 +6,32 @@ class LogHandler:
         
         # Create a file handler and set it up
         self.file_handler = logging.FileHandler(self.log_file_path)
-        self.file_handler.setLevel(logging.DEBUG)
+        self.file_handler.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         self.file_handler.setFormatter(formatter)
 
         # Create a console handler and set it up
         self.console_handler = logging.StreamHandler()
-        self.console_handler.setLevel(logging.DEBUG)
+        self.console_handler.setLevel(logging.INFO)
         self.console_handler.setFormatter(formatter)
 
         # Get the root logger and set its level to DEBUG
         logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)  # Ensure logging level is set
+        logger.setLevel(logging.INFO)  # Ensure logging level is set
         logger.addHandler(self.file_handler)  # Add file handler to root logger
         logger.addHandler(self.console_handler)  # Add console handler to root logger
 
-    def log_message(self, level, message, toFile=False, toConsole=True):
+    def log_message(self, level, message, toFile=False, toConsole=True, includeMetaData=True):
         # Dictionary to map level strings to logging functions
+
+        base_format = '%(asctime)s - %(levelname)s - %(message)s'
+        if not includeMetaData:
+            base_format = '%(message)s'
+
+        self.formatter = logging.Formatter(base_format)
+        self.file_handler.setFormatter(self.formatter)
+        self.console_handler.setFormatter(self.formatter)
+
         switcher = {
             'info': logging.info,
             'warning': logging.warning,

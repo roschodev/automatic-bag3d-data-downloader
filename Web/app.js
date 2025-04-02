@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
       var nwCoord = proj4('EPSG:4326', epsg28992, [nw.lng, nw.lat]);
       var seCoord = proj4('EPSG:4326', epsg28992, [se.lng, se.lat]);
 
+      console.log("NW Coordinate: ", nwCoord);
+      console.log("SE Coordinate: ", seCoord);
+
       // const coordtext = document.querySelector("#coordinateText");
       // coordtext.innerHTML = `NW Coordinate: ${nwCoord} -- SE Coordinate: ${seCoord}`;
   

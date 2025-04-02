@@ -16,10 +16,6 @@ import config.global_config as global_config
 import models.logging_model as logging_model
 
 
-CITYJSON_URL = "https://data.3dbag.nl/v20240420/tiles/{TID}/{ad_TID}.city.json"
-WFS_URL = "https://data.3dbag.nl/api/BAG3D/wfs?request=getcapabilities"
-WFS_LAYER = "BAG3D:Tiles"
-
 maximum_amount_tiles = 10
 
 def get_bag_tile_ids(bbox, show_debug: bool = False):
@@ -36,7 +32,7 @@ def get_bag_tile_ids(bbox, show_debug: bool = False):
     wfs11 = WebFeatureService(url=WFS_URL, version='1.1.0')
 	
     try:
-        response = wfs11.getfeature(typename=WFS_LAYER, bbox=bbox, srsname='urn:x-ogc:def:crs:EPSG:28992', outputFormat='json')
+        response = wfs11.getfeature(typename=global_config.WFS_LAYER, bbox=bbox, srsname='urn:x-ogc:def:crs:EPSG:28992', outputFormat='json')
         tiles = json.loads( response.read().decode('utf-8') )['features']
         tile_ids = [ tile['properties']['tile_id'] for tile in tiles ]
     except error.HTTPError as err:
@@ -66,7 +62,7 @@ def download_bag_tiles(tile_ids,show_debug: bool = False):
     
     for tid in tile_ids:
         ad_tid = tid.replace("/", "-")
-        url = CITYJSON_URL.format(TID=tid, ad_TID=ad_tid)
+        url = global_config.CITYJSON_URL.format(TID=tid, ad_TID=ad_tid)
             
         fname = global_config.project_tiles_path + (ad_tid + '.city.json')
                

@@ -1,0 +1,16 @@
+2025-04-02 20:55:52,203 - INFO - || Project succesfully created
+2025-04-02 20:55:52,203 - INFO - || BAGHandler succesfully created.
+
+2025-04-02 20:55:52,384 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-02 20:55:52,513 - INFO - || ............FETCHING TILE IDS SUCCESFULL 8............
+
+2025-04-02 20:55:52,514 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-02 20:55:53,745 - ERROR - || An error occured during downloading of BAG tiles: string indices must be integers, not 'str'.
