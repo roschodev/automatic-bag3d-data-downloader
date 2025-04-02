@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netherlands Map Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main">
+    <div class="flex-container"> 
+        <div id="map"></div>
+            
+        <div id="controls">
+            <div id="titlesection">
+                <h1 id="maintitle">3D Data Downloader</h1>
+                <p id="introduction">On this website you can easily download 3D-files from the 3DBAG and AHN Datasources. It will output 3D-models of your selected area </p>
+                
+            </div>
+            <div id="projectdetails">
+                <div id="projectname_input">
+                    <p class="small-text">Enter Projectname: </p>
+                    <input type="text" id="input">
+                </div>
+            </div>
+
+            <div id="selectioninfo">
+                <ul>
+                    <li id="coordinates">Centerpoint: 1.330045 NE 55.35567 SE</li>
+                    <li id="bounds">extents: 0.5 km2</li>
+                </ul>
+            </div>
+
+            <div id="options">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="downloadahn">
+                    <span class="checkbox-checkmark"></span>
+                    Download AHN Data
+                  </label>
+                  <label class="checkbox-container">
+                    <input type="checkbox" id="downloadbag">
+                    <span class="checkbox-checkmark"></span>
+                    Download 3DBAG Data
+                  </label>
+            </div>
+
+          
+              
+
+            <div id="buttons">
+                <button id="add" class="button-17" onclick="addRectangle('small')">Add Rectangle</button>
+                <button id="confirm" class="button-17 hidden" onclick="confirmRectangle()">Confirm Project</button>
+            </div>
+            <div >
+                <p id="statusText"></p>
+                <p id="coordinateText"></p>
+            </div>
+            <button id="donatebutton" class="button-74">Buy me a drink</button>
+        </div>
+    </div>
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
+     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+     <script src="https://cdn.jsdelivr.net/npm/leaflet-path-drag@0.0.7/Path.Drag.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/Leaflet/Leaflet.ClipPath/leaflet.clipPath.min.js"></script>
+     <script src="app.js"></script> 
+  </div>
+
+
+</body>
+</html> 
