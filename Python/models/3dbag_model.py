@@ -3,12 +3,15 @@ import sys
 import json
 import requests
 import traceback
-import cjio
+from cjio import cityjson as cj
 
 from owslib.wfs import WebFeatureService
 
 import urllib.error as error
 from urllib.error import HTTPError
+
+from shapely.geometry import Polygon as ShapelyPolygon
+from shapely.ops import unary_union
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import models.enums_model as e
@@ -29,8 +32,11 @@ class BAGHandler:
 
     def load_bag(self):
             tile_ids = self.get_tile_ids(self.currentProject.wkt_polygon.bounds)
-            bag_tiles = self.download_bag_tiles(tile_ids)
-           
+            bag_tiles = self.download_tiles(tile_ids)
+            merged_tile = self.merge_tiles(bag_tiles)
+            self.currentProject.logger.log_message("info", f"|| Extracting only objects matching the LOD type: {self.currentProject.lod}", True, True, True)
+            merged_tile.extract_lod(self.currentProject.lod)
+            intersected_tile = self.intersect_cm_with_aoi(merged_tile, self.currentProject.wkt_polygon)
             
     def __repr__(self):
         return (f"BAGHandler Details:\n"
@@ -67,16 +73,14 @@ class BAGHandler:
                 except KeyError:
                     self.currentProject.logger.log_message("warning", "Tile without tile_id found", True, True, False)
                 
-            self.currentProject.logger.log_message("info", f"|| ............FETCHING TILE IDS SUCCESFULL {len(tile_ids)}............\n", True, True, True)
+            self.currentProject.logger.log_message("info", f"|| ............FETCHING TILE IDS SUCCESFULL ({len(tile_ids)})............\n", True, True, True)
             return tile_ids
                     
         except error.HTTPError as e:
             self.currentProject.logger.log_message("info", f"|| Fetching Tile IDs failed: {e}. \n", True, True, False)
             return None
         
-        
-    def download_bag_tiles(self, tile_ids):
-   
+    def download_tiles(self, tile_ids):
         bag_tiles = []
         try:
             self.currentProject.logger.log_message("info", "|| ............DOWNLOADING TILES FROM BAG SERVICE............", True, True, True)
@@ -93,32 +97,87 @@ class BAGHandler:
                 except HTTPError as e:
                     self.currentProject.logger.log_message("error", f"|| An error occured during downloading of BAG tiles: {e}.", True, True, True,)
                     return None
-                
-                for i, tile in enumerate(bag_tiles):
-                    cityjson_tile = cjio.load(tile)
-                    print(f"   |--> {i}: {len(cityjson_tile.j['CityObjects'])}")
-                    total_cityObjects += len(cityjson_tile.j['CityObjects'])
-                
-            self.currentProject.logger.log_message("info", f"|| ............DOWNLOADING TILES FROM BAG SERVICE SUCCESFULL (nr. of tiles: {len(bag_tiles)}, nr. of CityObjects{total_cityObjects}:)............\n", True, True, True)
-            return bag_tiles
-        except Exception as e:
-           
-            traceback_str = traceback.format_exc()
             
-
+            total_cityObjects = 0 
+            for i, tile in enumerate(bag_tiles):
+                cityjson_tile = cj.load(tile)
+                total_cityObjects += cityjson_tile.number_city_objects()
+                
+                self.currentProject.logger.log_message("info", f"|| tile {i}: {tile}", True, True, True)
+                    
+            self.currentProject.logger.log_message("info", f"|| ............DOWNLOADING TILES FROM BAG SERVICE SUCCESFULL (nr. of tiles: {len(bag_tiles)}, nr. of CityObjects: {total_cityObjects}:)............\n", True, True, True)
+            return bag_tiles
+        except Exception as e:        
+            traceback_str = traceback.format_exc()
             self.currentProject.logger.log_message("error", f"|| An error occurred during downloading of BAG tiles: {traceback_str}", True, True, True)
             return None
-
+        
+    def merge_tiles(self, bag_tiles):
+        self.currentProject.logger.log_message("info", "|| ............STARTING TILE MERGING............", True, True, True)
+        
+        cms = []
+        try:
+            cm = cj.load(bag_tiles[0], transform=False)
+            
+            for i, f in enumerate(bag_tiles):
+                _cm = cj.load(f, transform=False)
+                cms.append(_cm)
+                
+            cm.merge(cms)
+            cm.load_from_j()
+          
+            cj.save(cm, self.path + "/merged_tile.city.json")
+            self.currentProject.logger.log_message("info", f"    ----> total number of CityObjects: {cm.number_city_objects()}", True, True, True)
+            self.currentProject.logger.log_message("info", "|| ............SUCCESFULLY MERGED TILES............", True, True, True)
+            return cm
+        except Exception as e:
+            traceback_str = traceback.format_exc()
+            self.currentProject.logger.log_message("error", f"|| An error occurred during merging of BAG tiles: {traceback_str}", True, True, True)
+            return None
+   
+    def intersect_cm_with_aoi(self, cm, aoi_poly) :
+        self.currentProject.logger.log_message("info", "|| ............STARTING INTERSECTING WITH ORIGINAL AOI............", True, True, True)
+        try:
+            aoi_cm = cj.CityJSON()
+            
+            buildings = cm.get_cityobjects(type="building")
+            for co_id, co in buildings.items():
+                for geom in co.geometry:
+                    if str(geom.lod) == "0":
+                        fp_poly = unary_union([ShapelyPolygon(ring)
+                                            for surface in geom.boundaries
+                                            for ring in surface])
+                        if fp_poly.intersects(aoi_poly):
+                            aoi_cm.set_cityobjects({co_id: co})
+                            # also add its children
+                            if len(co.children) > 0:
+                                ch = cm.get_cityobjects(id=co.children)
+                                aoi_cm.set_cityobjects(ch)
+            aoi_cm.add_to_j()
+            aoi_cm.update_bbox()
+            
+            aoi_cm.set_epsg(7415)
+            cj.save(aoi_cm, self.path + "/intersected_cm.city.json")
+            self.currentProject.logger.log_message("info", f"    ----> total number of CityObjects: {aoi_cm.number_city_objects()}", True, True, True)
+            self.currentProject.logger.log_message("info", "|| ............SUCCESFULLY INTERSECTED WITH ORIGINAL AOI............", True, True, True)
+            
+            """
+            aoi_cm.add_to_j()
+            obj_data = aoi_cm.export2obj()
+            
+            with open(self.path + "/output.obj", "w") as file:
+                file.write(obj_data.getvalue())
+            """
+            
+            return aoi_cm
+        
+        except Exception as e:
+            traceback_str = traceback.format_exc()
+            self.currentProject.logger.log_message("error", f"|| An error occurred during intersection of BAG tile with the original AOI: {traceback_str}", True, True, True)
+            return None
        
-    def merge_tiles():
-        pass
-    def intersect_with_aoi():
-        pass
-    def convert_to_3d_data():
-        pass
-    def return_to_user():
-        pass
 
+        
 
 project = project_model.Project("Amersfoort", e.Lod.HIGH)
 bagHandler = BAGHandler(project)

@@ -34,3 +34,7 @@ WFS_LAYER = "BAG3D:Tiles"
 #Remove-Item "E:\Projects\Coding\git-automatic-bag3d-data-downloader\projects\*" -Recurse -Force
 
 
+aoi = {
+    'nw_coord': [141509.1966788704, 455361.4163170283],
+    'se_coord': [142874.55721519803, 453132.7088395531]
+}
