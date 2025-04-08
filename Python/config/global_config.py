@@ -27,6 +27,17 @@ WFS_URL = "https://data.3dbag.nl/api/BAG3D/wfs?request=getcapabilities"
 WFS_VERSION = "1.1.0"
 WFS_LAYER = "BAG3D:Tiles"
 
+#AHN SETTINGS
+AHN_URL = "https://service.pdok.nl/rws/ahn/wms/v1_0?service=WMS&version=1.3.0&request=GetMap&layers=dtm_05m&styles=default&crs=EPSG:28992&bbox=1.98603,50.695,7.81981,55.7062&width=500&height=500&format=image/png"
+WMS_URL = ""
+WMS_LAYER = "dtm_05m"
+
+MAX_IMAGE_SIZE = 2000
+
+#BLENDER
+BLENDER_EXE = "C:/Program Files/Blender Foundation/Blender 4.3/blender.exe"
+BLENDER_SCRIPT = ""
+
 
 #USEFULL COMMANDS
 

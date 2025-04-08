@@ -179,16 +179,3 @@ def extract_lod_from_cm(lod, cm, save_debug_file: bool=False):
         
     return cm
 
-# Construct the command to run Blender with the script and arguments
-def create_blender_file(lod):
-    command = [
-        global_config.blender_exe,
-        '--background',
-        '--python', global_config.blender_script,
-        '--',  # Separator for Blender arguments and script arguments
-        global_config.project_name, global_config.projects_folder, lod
-    ]
-
-    # Execute the command
-    subprocess.run(command)
-    

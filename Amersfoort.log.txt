@@ -1,0 +1,97 @@
+2025-04-04 12:19:44,402 - INFO - || BAGHandler succesfully created.
+
+2025-04-04 12:19:44,404 - INFO - || Project succesfully created
+2025-04-04 12:25:36,574 - INFO - || Succesfully created a LogHandler class!
+2025-04-04 12:25:36,575 - INFO - || BAGHandler succesfully created.
+
+2025-04-04 12:25:36,575 - INFO - || Project succesfully created
+2025-04-04 12:26:16,579 - INFO - || LogHandler succesfully created
+2025-04-04 12:26:16,579 - INFO - || BAGHandler succesfully created.
+
+2025-04-04 12:26:16,579 - INFO - || Project succesfully created
+2025-04-04 12:26:39,275 - INFO - || LogHandler succesfully created
+2025-04-04 12:26:39,275 - INFO - || BAGHandler succesfully created
+2025-04-04 12:26:39,275 - INFO - || Project succesfully created
+2025-04-04 12:30:40,582 - INFO - || LogHandler succesfully created
+2025-04-04 12:30:40,582 - INFO - || BAGHandler succesfully created
+2025-04-04 12:30:40,582 - INFO - || Project succesfully created
+2025-04-04 12:30:41,111 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-04 12:30:41,348 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-04 12:31:16,044 - INFO - || LogHandler succesfully created
+2025-04-04 12:31:16,045 - INFO - || BAGHandler succesfully created
+2025-04-04 12:31:16,045 - INFO - || Project succesfully created
+2025-04-04 12:31:16,469 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-04 12:31:16,676 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-04 12:31:16,676 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-04 12:31:18,708 - INFO - || tile 0: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\8-504-584.city.json
+2025-04-04 12:31:18,961 - INFO - || tile 1: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\8-504-592.city.json
+2025-04-04 12:31:19,878 - INFO - || tile 2: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-512-584.city.json
+2025-04-04 12:31:20,087 - INFO - || tile 3: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-512-588.city.json
+2025-04-04 12:31:20,193 - INFO - || tile 4: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-516-584.city.json
+2025-04-04 12:31:20,438 - INFO - || tile 5: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-516-588.city.json
+2025-04-04 12:31:20,467 - INFO - || tile 6: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-512-592.city.json
+2025-04-04 12:31:21,325 - INFO - || tile 7: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_CghYdk\3D_BAG\9-516-592.city.json
+2025-04-04 12:31:21,326 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE SUCCESFULL (nr. of tiles: 8, nr. of CityObjects: 7790:)............
+
+2025-04-04 12:31:21,370 - INFO - || ............STARTING TILE MERGING............
+2025-04-04 12:31:27,680 - INFO -     ----> total number of CityObjects: 7790
+2025-04-04 12:31:27,680 - INFO - || ............SUCCESFULLY MERGED TILES............
+
+2025-04-04 12:31:27,754 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-04 12:31:28,584 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-04 12:31:30,992 - INFO -     ----> total number of CityObjects: 2715
+2025-04-04 12:31:30,993 - INFO - || ............SUCCESFULLY INTERSECTED WITH ORIGINAL AOI............
+
+2025-04-04 14:14:41,649 - INFO - ---->> LogHandler succesfully created
+2025-04-04 14:14:41,650 - INFO - || Started Project initialisation
+2025-04-04 14:14:41,651 - INFO - ---->> BAGHandler succesfully created
+2025-04-04 14:14:41,651 - INFO - || Project succesfully created
+2025-04-04 14:14:42,195 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-04 14:14:42,417 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-04 14:14:42,417 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-04 14:14:44,469 - INFO - || tile 0: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\8-504-584.city.json
+2025-04-04 14:14:44,745 - INFO - || tile 1: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\8-504-592.city.json
+2025-04-04 14:14:45,701 - INFO - || tile 2: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-512-584.city.json
+2025-04-04 14:14:45,917 - INFO - || tile 3: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-512-588.city.json
+2025-04-04 14:14:46,028 - INFO - || tile 4: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-516-584.city.json
+2025-04-04 14:14:46,270 - INFO - || tile 5: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-516-588.city.json
+2025-04-04 14:14:46,300 - INFO - || tile 6: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-512-592.city.json
+2025-04-04 14:14:47,203 - INFO - || tile 7: d:\01-Projects\02-Coding\git-automatic-bag3d-data-downloader\projects\Amersfoort_aWWMje\3D_BAG\9-516-592.city.json
+2025-04-04 14:14:47,203 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE SUCCESFULL (nr. of tiles: 8, nr. of CityObjects: 7790:)............
+
+2025-04-04 14:14:47,247 - INFO - || ............STARTING TILE MERGING............
+2025-04-04 14:14:53,881 - INFO -     ----> total number of CityObjects: 7790
+2025-04-04 14:14:53,881 - INFO - || ............SUCCESFULLY MERGED TILES............
+
+2025-04-04 14:14:53,956 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-04 14:14:54,840 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-04 14:14:57,362 - INFO -     ----> total number of CityObjects: 2715
+2025-04-04 14:14:57,362 - INFO - || ............SUCCESFULLY INTERSECTED WITH ORIGINAL AOI............
+

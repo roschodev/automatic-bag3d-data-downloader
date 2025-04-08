@@ -20,6 +20,9 @@ class LogHandler:
         logger.setLevel(logging.INFO)  # Ensure logging level is set
         logger.addHandler(self.file_handler)  # Add file handler to root logger
         logger.addHandler(self.console_handler)  # Add console handler to root logger
+        
+        logging.info("---->> LogHandler succesfully created")
+        
 
     def log_message(self, level, message, toFile=False, toConsole=True, includeMetaData=True):
         # Dictionary to map level strings to logging functions
