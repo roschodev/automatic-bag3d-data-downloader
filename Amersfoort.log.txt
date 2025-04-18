@@ -95,3 +95,428 @@
 2025-04-04 14:14:57,362 - INFO -     ----> total number of CityObjects: 2715
 2025-04-04 14:14:57,362 - INFO - || ............SUCCESFULLY INTERSECTED WITH ORIGINAL AOI............
 
+2025-04-10 13:11:01,379 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:11:01,380 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:14:52,421 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:14:52,422 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:16:19,630 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:16:19,630 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:17:21,290 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:17:21,290 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:17:21,290 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:22:23,614 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:22:23,614 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:22:23,614 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:22:23,614 - INFO - || Project succesfully created
+2025-04-10 13:22:23,825 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:22:23,944 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:22:23,944 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:22:26,701 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 104, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:22:26,726 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:22:26,726 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 120, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:22:26,726 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:23:07,115 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:23:07,115 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:23:07,115 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:23:07,115 - INFO - || Project succesfully created
+2025-04-10 13:23:07,242 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:23:07,350 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:23:07,351 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:23:08,828 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 104, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:23:08,854 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:23:08,854 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 120, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:23:08,854 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:26:31,997 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:26:31,997 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:26:31,997 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:26:31,997 - INFO - || Project succesfully created
+2025-04-10 13:26:32,171 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:26:32,286 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:26:32,286 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:26:34,044 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 104, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:26:34,070 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:26:34,070 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 120, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:26:34,070 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:26:34,070 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-10 13:26:34,071 - ERROR - || An error occurred during intersection of BAG tile with the original AOI: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 143, in intersect_cm_with_aoi
+    buildings = cm.get_cityobjects(type="building")
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_cityobjects'
+
+2025-04-10 13:27:06,079 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:27:06,080 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:27:06,080 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:27:06,080 - INFO - || Project succesfully created
+2025-04-10 13:27:06,256 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:27:06,369 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:27:06,369 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:27:07,821 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 104, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:27:07,846 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:27:07,846 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 120, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:27:07,846 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:27:07,846 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-10 13:27:07,847 - ERROR - || An error occurred during intersection of BAG tile with the original AOI: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 143, in intersect_cm_with_aoi
+    buildings = cm.get_cityobjects(type="building")
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_cityobjects'
+
+2025-04-10 13:27:25,094 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:27:25,094 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:27:25,096 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:27:25,096 - INFO - || Project succesfully created
+2025-04-10 13:27:25,282 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:27:25,404 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:27:25,404 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:27:26,869 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 104, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:27:26,896 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:27:26,896 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 120, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:27:26,896 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:27:26,897 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-10 13:27:26,897 - ERROR - || An error occurred during intersection of BAG tile with the original AOI: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 143, in intersect_cm_with_aoi
+    buildings = cm.get_cityobjects(type="building")
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_cityobjects'
+
+2025-04-10 13:31:11,569 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:31:11,570 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:31:11,570 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:31:11,570 - INFO - || Project succesfully created
+2025-04-10 13:31:11,787 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:31:11,908 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:31:11,908 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:31:13,450 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 105, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:31:13,477 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:31:13,477 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 121, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:31:13,478 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:50:24,493 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:50:24,493 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:50:24,493 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:50:24,494 - INFO - || Project succesfully created
+2025-04-10 13:50:24,683 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:50:24,812 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:50:24,812 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:50:26,262 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:50:26,290 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:50:26,291 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:50:26,291 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:54:28,877 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:54:28,877 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:54:28,877 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:54:28,877 - INFO - || Project succesfully created
+2025-04-10 13:54:29,042 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:54:29,161 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:54:29,161 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:54:30,649 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:54:30,675 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:54:30,676 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:54:30,676 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:56:35,584 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:56:35,584 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:56:35,584 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:56:35,584 - INFO - || Project succesfully created
+2025-04-10 13:56:36,013 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:56:36,160 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:56:36,160 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:56:37,863 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:56:37,892 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:56:37,892 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:56:37,893 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:56:37,893 - INFO - || ............STARTING INTERSECTING WITH ORIGINAL AOI............
+2025-04-10 13:56:37,893 - ERROR - || An error occurred during intersection of BAG tile with the original AOI: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 145, in intersect_cm_with_aoi
+    buildings = cm.get_cityobjects(type="building")
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_cityobjects'
+
+2025-04-10 13:57:11,643 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:57:11,643 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:57:11,643 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:57:11,643 - INFO - || Project succesfully created
+2025-04-10 13:57:11,851 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:57:11,960 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:57:11,960 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:57:13,429 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:57:13,455 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:57:13,455 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:57:13,455 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:57:34,719 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:57:34,719 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:57:34,719 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:57:34,720 - INFO - || Project succesfully created
+2025-04-10 13:57:34,891 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:57:34,999 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:57:35,000 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:57:36,452 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:57:36,477 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:57:36,477 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 13:57:36,478 - INFO - || Extracting only objects matching the LOD type: 2.2
+2025-04-10 13:58:10,815 - INFO - ---->> LogHandler succesfully created
+2025-04-10 13:58:10,815 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 13:58:10,815 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 13:58:10,815 - INFO - || Project succesfully created
+2025-04-10 13:58:11,035 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 13:58:11,150 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 13:58:11,150 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 13:58:12,730 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 13:58:12,757 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 13:58:12,757 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-04-10 14:01:35,053 - INFO - ---->> LogHandler succesfully created
+2025-04-10 14:01:35,054 - INFO - ---->> BAGHandler succesfully created
+2025-04-10 14:01:35,054 - INFO - ---->> AHNHandler succesfully created
+2025-04-10 14:01:35,054 - INFO - || Project succesfully created
+2025-04-10 14:01:35,231 - INFO - || ............FETCHING TILE IDS............
+    ----> 8/504/584
+    ----> 8/504/592
+    ----> 9/512/584
+    ----> 9/512/588
+    ----> 9/516/584
+    ----> 9/516/588
+    ----> 9/512/592
+    ----> 9/516/592
+2025-04-10 14:01:35,352 - INFO - || ............FETCHING TILE IDS SUCCESFULL (8)............
+
+2025-04-10 14:01:35,353 - INFO - || ............DOWNLOADING TILES FROM BAG SERVICE............
+2025-04-10 14:01:36,866 - ERROR - || An error occurred during downloading of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 106, in download_tiles
+    total_cityObjects += cityjson_tile.number_city_objects()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CityJSON' object has no attribute 'number_city_objects'. Did you mean: 'get_cityobjects'?
+
+2025-04-10 14:01:36,898 - INFO - || ............STARTING TILE MERGING............
+2025-04-10 14:01:36,898 - ERROR - || An error occurred during merging of BAG tiles: Traceback (most recent call last):
+  File "e:\Projects\01 - Coding\git-automatic-bag3d-data-downloader\Python\models\bag_model.py", line 122, in merge_tiles
+    cm = cj.load(bag_tiles[0], transform=False)
+                 ~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+

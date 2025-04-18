@@ -36,7 +36,7 @@ class Project:
         #Create a BAGHandler class instance associated with this project
         self.BAGHandler = bag.BAGHandler(self.path, self.logger, self.wkt_polygon, self.lod)    
         #create a AHNHandler class instance associated with this project
-        self.AHNHandler = ahn.AHNHandler(self.path, self.wkt_polygon)
+        self.AHNHandler = ahn.AHNHandler(self.path, self.wkt_polygon, self.logger)
                      
         self.logger.log_message("info", f"|| Project succesfully created", True, True, True)
     

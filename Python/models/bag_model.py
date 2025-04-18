@@ -5,6 +5,7 @@ import requests
 import traceback
 from cjio import cityjson as cj
 
+
 from owslib.wfs import WebFeatureService
 
 import urllib.error as error
@@ -12,12 +13,13 @@ from urllib.error import HTTPError
 
 from shapely.geometry import Polygon as ShapelyPolygon
 from shapely.ops import unary_union
+from logging_model import LogHandler
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import config.global_config as global_config
 
 class BAGHandler:
-    def __init__(self, path, logger, wkt_polygon, lod):
+    def __init__(self, path, logger: LogHandler, wkt_polygon, lod):
         self.bag = None
         self.wkt_polygon = wkt_polygon
         self.lod = lod
@@ -43,9 +45,9 @@ class BAGHandler:
             tile_ids = self.get_tile_ids(self.wkt_polygon.bounds)
             bag_tiles = self.download_tiles(tile_ids)
             merged_tile = self.merge_tiles(bag_tiles)
-            self.logger.log_message("info", f"|| Extracting only objects matching the LOD type: {self.lod}", True, True, True)
-            merged_tile.extract_lod(self.lod)
-            intersected_tile = self.intersect_cm_with_aoi(merged_tile, self.wkt_polygon)    
+            #self.logger.log_message("info", f"|| Extracting only objects matching the LOD type: {self.lod}", True, True, True)
+            # merged_tile.extract_lod(self.lod)
+            #intersected_tile = self.intersect_cm_with_aoi(merged_tile, self.wkt_polygon)    
     
     def get_tile_ids(self, bbox):
         wfs11 = WebFeatureService(url=self.WFS_URL, version=self.WFS_VERSION)
@@ -158,13 +160,10 @@ class BAGHandler:
             
             aoi_cm.set_epsg(7415)
             cj.save(aoi_cm, self.path + "/intersected_cm.city.json")
-            self.logger.log_message("info", f"    ----> total number of CityObjects: {aoi_cm.number_city_objects()}", True, True, True)
+            self.logger.log_message("info", f"    ----> total number of CityObjects: {aoi_cm.number_city_objects_level1()}", True, True, True)
             self.logger.log_message("info", "|| ............SUCCESFULLY INTERSECTED WITH ORIGINAL AOI............\n", True, True, True)
             
-            obj_data = aoi_cm.export2obj()
-            
-            with open(self.path + "/output.obj", "w") as file:
-                file.write(obj_data.getvalue())
+           
             
             return aoi_cm
         

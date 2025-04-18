@@ -6,10 +6,11 @@ from shapely import wkt
 
 
 class AHNHandler:
-    def __init__(self, path, wkt_polygon):
+    def __init__(self, path, wkt_polygon, logger):
         self.wkt_polygon = wkt_polygon
         self.AHN_URL = g_config.AHN_URL
         self.path = path
+        self.logger = logger
         self.logger.log_message("info", "---->> AHNHandler succesfully created", True, True, True)
         self.image_size = ut.calculate_aspectratio(wkt_polygon.bounds) 
         

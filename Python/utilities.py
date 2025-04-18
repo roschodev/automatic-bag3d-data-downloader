@@ -44,10 +44,10 @@ def calculate_aspectratio(bounds):
         aspect_ratio = bbox_width / bbox_height
         
         if aspect_ratio > 1:  # Landscape
-            image_width = g_config.max_image_size
-            image_height = int(g_config.max_image_size / aspect_ratio)
+            image_width = g_config.MAX_IMAGE_SIZE
+            image_height = int(g_config.MAX_IMAGE_SIZE / aspect_ratio)
         else:  # Portrait or square
-            image_height = g_config.max_image_size
-            image_width = int(g_config.max_image_size * aspect_ratio)
+            image_height = g_config.MAX_IMAGE_SIZE
+            image_width = int(g_config.MAX_IMAGE_SIZE * aspect_ratio)
             
-        return (image_width * g_config.resolution.multiplier, image_height * g_config.resolution.multiplier)    
+        return (image_width, image_height)    
