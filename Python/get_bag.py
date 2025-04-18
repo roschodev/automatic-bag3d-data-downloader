@@ -29,7 +29,7 @@ def get_bag_tile_ids(bbox, show_debug: bool = False):
     Returns:
         tile_ids ([str]): List of strings of pulled tile numbers in the format x/xxx/xxx.
     """
-    wfs11 = WebFeatureService(url=WFS_URL, version='1.1.0')
+    wfs11 = WebFeatureService(url=global_config.WFS_URL, version='1.1.0')
 	
     try:
         response = wfs11.getfeature(typename=global_config.WFS_LAYER, bbox=bbox, srsname='urn:x-ogc:def:crs:EPSG:28992', outputFormat='json')
