@@ -1,0 +1,55 @@
+import requests as req
+import time
+
+citygm_url = "https://api.pdok.nl/lv/bgt/download/v1_0/full/custom"
+base_url = "https://api.pdok.nl"
+
+params = {
+    "featuretypes": [
+        "bak",
+        "gebouwinstallatie",
+        "kunstwerkdeel",
+        "onbegroeidterreindeel"
+    ],
+    "format": "citygml",
+    "geofilter": "POLYGON((211417.92 475752.48,212390.64 475896.12,212916.48 475818.84,212879.52 475360.2,212950.08 475203.12,212839.2 475065.36,212819.04 474981.36,212819.04 474877.2,212772.0 474857.04,212792.16 474769.68,212832.48 474705.84,212889.6 474695.76,213010.56 474685.68,213044.16 474611.76,213030.72 474450.48,212637.6 474423.6,212708.16 473956.56,211122.24 473849.04,210453.6 473896.08,210315.84 473970.0,211417.92 475752.48))"
+}
+
+def get_citygml(city_name="Amsterdam", output_file="amsterdam_citygml.gml"):
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }
+    seconds = 0
+    print("🔄 Submitting request...")
+    response = req.post(citygm_url, json=params, headers=headers)
+    
+    if response.status_code == 202:
+        status_url = base_url + response.json()["_links"]["status"]["href"]
+        print(f"🕒 Request accepted. Polling status at:\n{status_url}")
+        
+        # Poll for status
+        while True:
+            status_response = req.get(status_url, headers=headers)
+            status_data = status_response.json()
+            if "downloadUrl" in status_data:
+                download_url = status_data["downloadUrl"]
+                print(f"✅ File ready! Downloading from:\n{download_url}")
+                download_response = req.get(download_url)
+                with open(output_file, "wb") as f:
+                    f.write(download_response.content)
+                print(f"💾 File saved to {output_file}")
+                break
+            else:
+        
+                seconds += 1
+                print(f"⏳ Still processing...{seconds} seconds")
+                time.sleep(1)
+
+    else:
+        print(f"❌ Failed. Status code: {response.status_code}")
+        print(response.text)
+
+# Run
+if __name__ == "__main__":
+    get_citygml()
